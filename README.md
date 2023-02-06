@@ -1,1 +1,1 @@
-# GuessNumberGame
+# Guess a Number Game
