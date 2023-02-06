@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <title>Guess a Number Game</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Jack Fiacco"/>
+    <meta name="date" content="DATE"/>
+    <meta name="description" content="Number Game"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script type="text/javascript">
+        var randomNumber;
+        var round = 0;
+        var lowend = 1;
+        var highend = 100;
+        var range = highend - lowend + 1;
+
+
+      function newNumber(){
+          randomNumber = Math.floor(range*Math.random()) + lowend;
+          document.getElementById("gameOver").innerHTML = "";
+      }
+      function guessNumber(){
+          var guess = document.getElementById("guessBox").value;
+          var feedbackBox = document.getElementById("answer");
+          if(randomNumber == guess){
+            feedback = "correct";
+            document.getElementById("gameOver").innerHTML = "<button id ='newGame' onclick = 'newNumber()'>NEW GAME</button>";
+          } else if (randomNumber>guess){
+              feedback = "Too low";
+          } else if (randomNumber<guess){
+              feedback = "Too high";
+          }
+          feedbackBox.innerHTML = feedback;
+      }
+
+    </script>
+  </head>
+
+
+  <body onload="newNumber()">
+<h1>Pick a Number 1 Through 100</h1>
+<input type="number"id="guessBox">
+<button type="button"id="guessButton" onclick="guessNumber()" >Guess</button>
+<div id="answer"></div>
+<div id="gameOver"></div>
+
+
+    
+  </body>
+</html>
+
+
+        
+
+        
+
+    
+
+
+
+
+
